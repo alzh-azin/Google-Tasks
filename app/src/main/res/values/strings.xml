@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Google-Tasks</string>
+    <string name="label_todolist">TODOLIST</string>
 </resources>
