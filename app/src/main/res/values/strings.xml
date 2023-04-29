@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Google-Tasks</string>
     <string name="label_todolist">TODOLIST</string>
+    <string name="label_authentication">Organize your \nwork and life, finally.</string>
 </resources>
