@@ -1,4 +1,4 @@
-package com.example.google_tasks.ui.theme
+package com.example.tasks.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
@@ -28,7 +28,7 @@ private val tasksLightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun GoogleTasksTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun TasksTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val appColorScheme = if (darkTheme) {
         tasksDarkColorScheme
     } else {

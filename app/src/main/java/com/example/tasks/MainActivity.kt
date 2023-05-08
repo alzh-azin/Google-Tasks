@@ -1,4 +1,4 @@
-package com.example.google_tasks
+package com.example.tasks
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,14 +10,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.google_tasks.ui.theme.Authentication
-import com.example.google_tasks.ui.theme.GoogleTasksTheme
+import com.example.tasks.ui.theme.Authentication
+import com.example.tasks.ui.theme.TasksTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GoogleTasksTheme {
+            TasksTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -38,7 +38,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    GoogleTasksTheme {
+    TasksTheme {
         Greeting("Android")
     }
 }

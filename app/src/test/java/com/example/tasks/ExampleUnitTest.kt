@@ -1,4 +1,4 @@
-package com.example.google_tasks
+package com.example.tasks
 
 import org.junit.Test
 
