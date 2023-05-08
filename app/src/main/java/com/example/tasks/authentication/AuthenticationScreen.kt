@@ -1,4 +1,4 @@
-package com.example.tasks.ui.theme
+package com.example.tasks.authentication
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,17 +21,19 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionResult
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.tasks.R
+import com.example.tasks.ui.theme.BlueA400
+import com.example.tasks.ui.theme.Gray600
 
 @Composable
-fun Authentication() {
+fun AuthenticationScreen(navController: NavController, onSignInClick: () -> Unit) {
 
     val lottieComposition: LottieCompositionResult =
         rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.task))
@@ -86,7 +88,9 @@ fun Authentication() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                onClick = {}) {
+                onClick = {
+                    onSignInClick.invoke()
+                }) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -104,13 +108,5 @@ fun Authentication() {
         }
 
 
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun AuthenticationPreview() {
-    TasksTheme {
-        Authentication()
     }
 }
