@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.google_tasks"
+    namespace = "com.example.tasks"
     compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = "com.example.google_tasks"
+        applicationId = "com.example.tasks"
         minSdk = Config.minSdk
         targetSdk = Config.targetSdk
         versionCode = Config.versionCode

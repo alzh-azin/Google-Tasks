@@ -1,2 +1,2 @@
-rootProject.name = "Google-Tasks"
+rootProject.name = "Tasks"
 include(":app")

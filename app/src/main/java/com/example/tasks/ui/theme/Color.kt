@@ -1,4 +1,4 @@
-package com.example.google_tasks.ui.theme
+package com.example.tasks.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
