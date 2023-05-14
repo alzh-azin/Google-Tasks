@@ -1,11 +1,15 @@
 import Dependencies.androidTestImplementation
 import Dependencies.debugImplementation
 import Dependencies.implementation
+import Dependencies.kapt
 import Dependencies.testImplementation
+import com.android.build.api.dsl.Packaging
 
 plugins {
     id("com.android.application")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -22,6 +26,14 @@ android {
         testInstrumentationRunner = Config.androidTestInstrumentation
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        manifestPlaceholders["appAuthRedirectScheme"] ="com.example.tasks"
+
+        packaging {
+            resources {
+                excludes += "META-INF/DEPENDENCIES"
+            }
         }
     }
 
@@ -60,5 +72,6 @@ dependencies {
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
     debugImplementation(Dependencies.debugLibraries)
+    kapt(Dependencies.kaptLibraries)
 
 }
