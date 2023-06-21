@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.example.tasks.datastore";
+option java_multiple_files = true;
+
+message UserPreferences{
+
+  string auth_state = 1;
+}

@@ -45,20 +45,34 @@ object Dependencies {
     private const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
     private const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHilt}"
     private const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hilt}"
-    private const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
+    private const val hiltNavigationCompose =
+        "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
 
-    //Okhttp
+    //Network
     private const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
-
-    //Retrofit
     private const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    private const val moshiConvertor =
+        "com.squareup.retrofit2:converter-moshi:${Versions.moshiConvertor}"
+    private const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    private const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:${Versions.moshiKotlin}"
+    private const val moshiCodegen =
+        "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiCodegen}"
 
     //Navigation
     private const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
 
     //ViewModel
-    private const val lifecycleViewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
-    private const val lifecycleRuntimeCompose = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.viewModel}"
+    private const val lifecycleViewModelCompose =
+        "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
+    private const val lifecycleRuntimeCompose =
+        "androidx.lifecycle:lifecycle-runtime-compose:${Versions.viewModel}"
+
+    //DataStore
+    const val dataStore = "androidx.datastore:datastore:${Versions.dataStore}"
+    const val protoBufJava = "com.google.protobuf:protobuf-javalite:${Versions.protoBufJavaLite}"
+    const val protoBufKotlin =
+        "com.google.protobuf:protobuf-kotlin-lite:${Versions.protoBufKotlinLite}"
 
 
     val appLibraries = mutableListOf<String>().apply {
@@ -81,6 +95,12 @@ object Dependencies {
         add(navigation)
         add(lifecycleViewModelCompose)
         add(hiltNavigationCompose)
+        add(dataStore)
+        add(protoBufJava)
+        add(protoBufKotlin)
+        add(moshiConvertor)
+        add(loggingInterceptor)
+        add(moshiKotlin)
     }
 
     val testLibraries = mutableListOf<String>().apply {
@@ -99,6 +119,10 @@ object Dependencies {
     val kaptLibraries = mutableListOf<String>().apply {
         add(daggerHiltCompiler)
         add(hiltCompiler)
+    }
+
+    val kspLibararies = mutableListOf<String>().apply {
+        add(moshiCodegen)
     }
 
     fun DependencyHandler.implementation(list: List<String>) {
@@ -128,6 +152,12 @@ object Dependencies {
     fun DependencyHandler.kapt(list: List<String>) {
         list.forEach { dependency ->
             add("kapt", dependency)
+        }
+    }
+
+    fun DependencyHandler.ksp(list: List<String>) {
+        list.forEach { dependency ->
+            add("ksp", dependency)
         }
     }
 

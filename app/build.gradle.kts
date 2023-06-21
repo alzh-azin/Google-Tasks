@@ -3,13 +3,13 @@ import Dependencies.debugImplementation
 import Dependencies.implementation
 import Dependencies.kapt
 import Dependencies.testImplementation
-import com.android.build.api.dsl.Packaging
 
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
+    id("com.google.protobuf").version(Versions.protoBuf)
 }
 
 android {
@@ -28,7 +28,7 @@ android {
             useSupportLibrary = true
         }
 
-        manifestPlaceholders["appAuthRedirectScheme"] ="com.example.tasks"
+        manifestPlaceholders["appAuthRedirectScheme"] = "com.example.tasks"
 
         packaging {
             resources {
@@ -74,4 +74,24 @@ dependencies {
     debugImplementation(Dependencies.debugLibraries)
     kapt(Dependencies.kaptLibraries)
 
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${Versions.protobufProtoc}"
+
+    }
+
+    generateProtoTasks {
+        all().forEach {
+            it.builtins {
+                register("java") {
+                    option("lite")
+                }
+                register("kotlin") {
+                    option("lite")
+                }
+            }
+        }
+    }
 }

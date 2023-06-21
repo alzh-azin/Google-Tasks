@@ -32,15 +32,25 @@ object Versions {
     const val hilt = "1.0.0"
     const val hiltNavigationCompose = "1.0.0"
 
-    //OkHttp
+    //Network
     const val okhttp = "4.10.0"
-
-    //Retrofit
     const val retrofit = "2.9.0"
+    const val moshiConvertor = "2.9.0"
+    const val loggingInterceptor = "4.9.0"
+    const val moshiKotlin = "1.14.0"
+    const val moshiCodegen = "1.14.0"
 
     //Navigation
     const val navigation = "2.5.3"
 
     //ViewModel
     const val viewModel = "2.5.1"
+
+    //DataStore
+    const val dataStore = "1.0.0"
+    const val protoBufJavaLite = "3.21.12"
+    const val protoBufKotlinLite = "3.21.12"
+    const val protoBuf = "0.9.1"
+    const val protobufProtoc = "3.21.12"
+
 }
